@@ -6,7 +6,7 @@ Change the intensity and style of your dances! Currently 210 dances available.
 
 ## How to Install
 
-- Clone or Download the dancing folder.
+- Clone or Download the dancing folder. [https://github.com/angelotadeucci/Dances-FiveM/releases]
 
 - Drop the folder in your FiveM Server Resources folder.
 
