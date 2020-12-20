@@ -14,7 +14,7 @@ Change the intensity and style of your dances! Currently 210 dances available.
 
 ## Usage
 
-Type /dance in chat. 🙂
+Type /dance in chat. Use up and down arrow to change intensity, left and right arrow to go to next and previous dance. If the dance is controllable like (boxing, trip, jumper, shuffle, karate, monkey) use WASD to change the dancing style.
 
 ## Issues / Missing features
 
