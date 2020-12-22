@@ -21,21 +21,37 @@ RegisterCommand("dance", function (source, args)
 		dancing = false
 		return
 	end
-	local input = args[1] == nil and math.random(#Dances) or tonumber(args[1])
-	if args[1] == "boxing" then
-		input = 133
-	elseif args[1] == "trip" then
-		input = 134
-	elseif args[1] == "jumper" then
-		input = 135
-	elseif args[1] == "shuffle" then
-		input = 136
-	elseif args[1] == "karate" then
-		input = 137
-	elseif args[1] == "monkey" then
-		input = 138
+	local input
+	if type(args[1]) == "string" then
+		if args[1] == "boxing" then
+			input = 133
+		elseif args[1] == "trip" then
+			input = 134
+		elseif args[1] == "jumper" then
+			input = 135
+		elseif args[1] == "shuffle" then
+			input = 136
+		elseif args[1] == "karate" then
+			input = 137
+		elseif args[1] == "monkey" then
+			input = 138
+		else
+			return TriggerEvent('chat:addMessage', {
+				color = { 255, 255, 255},
+				multiline = true,
+				args = {"There isn't a dance with this name."}
+			})
+		end
+	else
+		input = args[1] == nil and math.random(#Dances) or tonumber(args[1])
+		if input > #Dances then
+			return TriggerEvent('chat:addMessage', {
+				color = { 255, 255, 255},
+				multiline = true,
+				args = {"There is only " .. #Dances .. " dances."}
+			})
+		end
 	end
-	if input > #Dances then return print("only " .. #Dances .. " dances") end
 	currentDanceId = input
 	currentDance = Dances[currentDanceId]
 	dancing = true
